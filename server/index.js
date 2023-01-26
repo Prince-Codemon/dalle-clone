@@ -1,12 +1,12 @@
 import express from 'express'
 import dotenv from 'dotenv'
+dotenv.config()
 import connectDB from './mongodb/connect.js'
-import  postRoutes from './routes/postRoutes.js'
+import postRoutes from './routes/postRoutes.js'
 import dalleRoutes from './routes/dalleRoutes.js'
 import cors from 'cors'
 const app = express()
-dotenv.config()
-connectDB()
+// connectDB()
 const PORT = process.env.PORT || 3000 
 
 const auth = (req,res,next)=>{
@@ -17,12 +17,10 @@ const auth = (req,res,next)=>{
     }
 }
 
-
 app.use(cors()) 
 app.use(express.json({limit: '50mb'}))
-
 app.use('/api/v1/posts',auth,postRoutes)
-app.use('/api/v1/dalle',dalleRoutes)
+app.use('/api/v1/dalle',auth,dalleRoutes)
  
 
 app.get('/',(req,res)=>{
