@@ -152,9 +152,7 @@ const CreatePost = () => {
         <div className="mt-10">
           <p className="mt-2 text-[#666e75] text-[14px]">
             Once you have created your image, you can share it with the
-            community by clicking the button below. You can also save it to your
-            device by right-clicking on the image and selecting "Save Image As".
-            You can also share it on social media by clicking the share button.
+            community by clicking the button below.
           </p>
           <button
             className="bg-[#6469FF] text-white font-semibold text-sm py-2 px-4 rounded-md hover:bg-[#4F54D8] disabled:opacity-50 disabled:cursor-not-allowed mt-5"
