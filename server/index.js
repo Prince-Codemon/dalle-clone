@@ -28,13 +28,13 @@ app.use("/api/v1/posts", auth, postRoutes);
 app.post("/api/v1/dalle", auth, async (req, res) => {
   try {
     const { prompt } = req.body;
-    // const aiResponse = await openai.createImage({
-    //   prompt,
-    //   n: 1,
-    //   size: "1024x1024",
-    //   response_format: "b64_json",
-    // });
-    // const image = aiResponse.data.data[0].b64_json;
+    const aiResponse = await openai.createImage({
+      prompt,
+      n: 1,
+      size: "1024x1024",
+      response_format: "b64_json",
+    });
+    const image = aiResponse.data.data[0].b64_json;
     return res.status(200).json({ prompt });
   } catch (error) {
     return res.status(500).json({ message: error.message });
