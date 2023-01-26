@@ -1,5 +1,5 @@
 const express = require('express')
-const cors = require('cors')
+// const cors = require('cors')
 // import dotenv from 'dotenv'
 require('dotenv').config()
 
@@ -15,7 +15,7 @@ const auth = (req,res,next)=>{
     }
 }
 
-app.use(cors()) 
+// app.use(cors()) 
 app.use(express.json({limit: '50mb'}))
 // app.use('/api/v1/posts',auth,postRoutes)
 // app.use('/api/v1/dalle',auth,dalleRoutes)
