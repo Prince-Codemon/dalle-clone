@@ -1,10 +1,10 @@
-import express from 'express'
-import cors from 'cors'
-import dotenv from 'dotenv'
-dotenv.config() 
+const express = require('express')
+const cors = require('cors')
+require('dotenv').config()
+const connectDB = require('./config/db')
 
 const app = express()
-// connectDB()
+connectDB()
 const PORT = process.env.PORT || 3000 
 
 const auth = (req,res,next)=>{
