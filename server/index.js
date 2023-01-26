@@ -2,8 +2,8 @@ const express = require('express')
 const cors = require('cors')
 require('dotenv').config()
 const connectDB = require('./mongodb/connect')
-const dalleRoutes = require('./routes/dalleRoutes')
-// const postRoutes = require('./routes/postRoutes')
+// const dalleRoutes = require('./routes/dalleRoutes')
+const postRoutes = require('./routes/postRoutes')
 const app = express()
 connectDB()
 const PORT = process.env.PORT || 3000 
@@ -18,8 +18,8 @@ const auth = (req,res,next)=>{
 
 app.use(cors()) 
 app.use(express.json({limit: '50mb'}))
-// app.use('/api/v1/posts',auth,postRoutes)
-app.use('/api/v1/dalle',auth,dalleRoutes)
+app.use('/api/v1/posts',auth,postRoutes)
+// app.use('/api/v1/dalle',auth,dalleRoutes)
 
  
 
