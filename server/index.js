@@ -1,12 +1,8 @@
 const express = require('express')
-// const cors = require('cors')
+const cors = require('cors')
 // import dotenv from 'dotenv'
-const dotenv = require('dotenv')
-dotenv.config()
-// import connectDB from './mongodb/connect.js'
-// import postRoutes from './routes/postRoutes.js'
-// import dalleRoutes from './routes/dalleRoutes.js'
-// import cors from 'cors'
+require('dotenv').config()
+
 const app = express()
 // connectDB()
 const PORT = process.env.PORT || 3000 
