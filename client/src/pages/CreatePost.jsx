@@ -42,7 +42,8 @@ const CreatePost = () => {
         alert("Something went wrong, please try again later");
       }
     } else {
-      alert("Please generate an image first");
+      return alert("Please generate an image first");
+      setLoading(false);
     }
   };
 
