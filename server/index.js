@@ -7,11 +7,6 @@ const postRoutes = require("./routes/postRoutes");
 const app = express();
 connectDB();
 const PORT = process.env.PORT || 3000;
-const { OpenAIApi, Configuration } = require("openai");
-const configuration = new Configuration({
-  apiKey: process.env.OPENAI_API_KEY,
-});
-const openai = new OpenAIApi(configuration);
 
 const auth = (req, res, next) => {
   if (req.headers.secretkey === process.env.SECRET_KEY) {

@@ -19,7 +19,7 @@ const CreatePost = () => {
     if (form.prompt && form.photo) {
       try {
         const response = await fetch(
-          `${process.env.REACT_APP_SERVER_URL}/api/v1/posts`,
+          `${'https://dalle-clone1.vercel.app'}/api/v1/posts`,
           {
             method: "POST",
             headers: {
@@ -42,8 +42,8 @@ const CreatePost = () => {
         alert("Something went wrong, please try again later");
       }
     } else {
-      return alert("Please generate an image first");
       setLoading(false);
+      return alert("Please generate an image first");
     }
   };
 
@@ -62,7 +62,7 @@ const CreatePost = () => {
       try {
         setGeneratingImg(true);
         const response = await fetch(
-          `${process.env.REACT_APP_SERVER_URL}/api/v1/dalle`,
+          `${'https://dalle-clone1.vercel.app'}/api/v1/dalle`,
           {
             method: "POST",
             headers: {
@@ -74,6 +74,7 @@ const CreatePost = () => {
             }),
           }
         );
+        if(!response.ok) throw new Error("Something went wrong");
         const data = await response.json();
         setForm({ ...form, photo: `data:image/jpeg;base64,${data.photo}` });
         setGeneratingImg(false);

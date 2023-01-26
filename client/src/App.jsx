@@ -34,6 +34,7 @@ const App = () => {
               href="https://github.com/Prince-Codemon"
               className="text-[#6469ff] font-bold text-lg"
               rel="noreferrer"
+              target={"_blank"}
             >
               Prince Codemon
             </a>

@@ -7,7 +7,7 @@ const RenderCards = ({ data, title }) => {
     <h2 className="text-[#6449ff] text-xl uppercase font-bold mt-5">{title}</h2>
   );
 };
-const URL = process.env.REACT_APP_SERVER_URL;
+const URL = "https://dalle-clone1.vercel.app"
 
 
 const Home = () => {
