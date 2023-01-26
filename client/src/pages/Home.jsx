@@ -24,7 +24,7 @@ const Home = () => {
           method: "GET",
           headers: {
             "Content-Type": "application/json",
-            "SecretKey":  process.env.REACT_APP_SECRET_KEY,
+            "SecretKey": '29d68v5d33238df49136',
           },
         });
         if (response.ok) {

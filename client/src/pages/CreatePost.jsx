@@ -24,7 +24,7 @@ const CreatePost = () => {
             method: "POST",
             headers: {
               "Content-Type": "application/json",
-              "SecretKey": process.env.REACT_APP_SECRET_KEY,
+              "SecretKey": '29d68v5d33238df49136',
             },
             body: JSON.stringify({
               name: form.name,
@@ -67,7 +67,7 @@ const CreatePost = () => {
             method: "POST",
             headers: {
               "Content-Type": "application/json",
-              "SecretKey": process.env.REACT_APP_SECRET_KEY,
+              "SecretKey": '29d68v5d33238df49136',
             },
             body: JSON.stringify({
               prompt: form.prompt,
