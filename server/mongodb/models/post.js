@@ -1,4 +1,4 @@
-import mongoose from "mongoose";
+const mongoose = require("mongoose");
 
 const Post = new mongoose.Schema({
     name:{
@@ -18,4 +18,4 @@ const Post = new mongoose.Schema({
 }
 );
 
-export default mongoose.model("Post", Post);
+module.exports = mongoose.model("Post", Post);

@@ -1,7 +1,7 @@
-import express from "express";
-import * as dotenv from "dotenv";
-import { v2 as cloudinary } from "cloudinary";
-import Post from "../mongodb/models/post.js";
+const express = require("express");
+const dotenv = require("dotenv");
+const cloudinary = require("cloudinary").v2; 
+const Post = require('../mongodb/models/post')
 dotenv.config();
 
 const router = express.Router();
@@ -35,4 +35,5 @@ router.post("/", async (req, res) => {
     res.status(409).json({ message: error.message, success: false });
   }
 });
-export default router;
+
+module.exports = router;
