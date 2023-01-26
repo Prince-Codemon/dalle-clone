@@ -1,5 +1,7 @@
-import express from 'express'
-import dotenv from 'dotenv'
+const express = require('express')
+// const cors = require('cors')
+// import dotenv from 'dotenv'
+const dotenv = require('dotenv')
 dotenv.config()
 // import connectDB from './mongodb/connect.js'
 // import postRoutes from './routes/postRoutes.js'
