@@ -35,10 +35,9 @@ app.post("/api/v1/dalle", auth, async (req, res) => {
     //   response_format: "b64_json",
     // });
     // const image = aiResponse.data.data[0].b64_json;
-    return res.status(200).json({ photo: prompt });
+    return res.status(200).json({ prompt });
   } catch (error) {
-    console.error(error);
-    return res.status(500).send( error?.response.data.error.message || "Something went wrong");
+    return res.status(500).json({ message: error.message });
   }
 });
 
